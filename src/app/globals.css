@@ -1,26 +1,108 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Exact Colors from jadibotwa.xyz */
+  --color-background: #0a192f;
+  --color-surface: #112240;
+  --color-card: #112240;
+  --color-border: #233554;
+  --color-border-light: #334e68;
+  --color-title: #ccd6f6;
+  --color-text: #8892b0;
+  --color-muted: #64748b;
+
+  /* Primary Palette (jadibotwa.xyz Electric Cyan / Teal) */
+  --color-primary-50: #124b5d;
+  --color-primary-100: #105a6e;
+  --color-primary-200: #0a6f88;
+  --color-primary-300: #048ba9;
+  --color-primary-400: #00add0;
+  --color-primary-500: #00e5ff;
+  --color-primary-600: #4ce1fd;
+  --color-primary-700: #0a6f88;
+  --color-primary-800: #bdf6fe;
+  --color-primary-900: #e0fbfc;
+
+  /* Accents */
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-whatsapp-500: #128c7e;
+  --color-success: #4ade80;
+  --color-warning: #fbbf24;
+  --color-danger: #f87171;
+  --color-info: #60a5fa;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-background: var(--color-background);
+  --color-surface: var(--color-surface);
+  --color-card: var(--color-card);
+  --color-border: var(--color-border);
+  --color-title: var(--color-title);
+  --color-text: var(--color-text);
+  --color-muted: var(--color-muted);
+
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0a192f;
+  color: #8892b0;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0a192f;
+}
+::-webkit-scrollbar-thumb {
+  background: #233554;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00e5ff;
+}
+
+/* Custom container utility with generous breathing room */
+.app-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .app-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .app-container {
+    max-width: 1380px;
+    padding-left: 3.5rem;
+    padding-right: 3.5rem;
+  }
 }
